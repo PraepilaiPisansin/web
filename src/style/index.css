@@ -1,0 +1,371 @@
+
+.App-bg {
+  background-color:white;
+  margin: 65px 5px 0 170px;
+}
+.box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1{
+  color:  #0ed2f7;
+}
+/*Create*/
+select     
+{    
+  width: 100%;    
+  padding: 7px 10px;   
+  display: inline-block;    
+  border: 1px solid #ccc;    
+  border-radius: 4px;    
+  box-sizing: border-box; 
+}
+
+/*People list and grid*/
+
+.btn-filter{
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  padding: 0 15px;
+  cursor: pointer;
+   margin: 0 3px 5px;
+  max-width: 300;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+  font-size: 14px;
+  line-height: 38px;
+  font-weight: bold;
+  color:white;
+   border-radius: 5px;
+   overflow: hidden;
+   background-color: #d5adc8;
+  background-image: linear-gradient(315deg, #d5adc8 0%, #ff8489 74%);
+   transition: .3s ease-in-out;
+   box-shadow: rgba(0, 0, 0, 0.3) 1.95px 1.95px 2.6px;
+}
+
+.btn-filter:hover {
+  -webkit-transform: rotate(10deg);
+  -ms-transform: rotate(10deg);
+  transform: rotate(10deg);
+  color:#353c3f;
+}
+
+/*people-list*/
+.wrapper-grid{
+  
+  
+max-width: 410px;
+}
+.grid{
+   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  padding: 15px 8px 0 8px;
+  font-family: arial;
+  border-radius: 8px;
+background-color: #d5adc8;
+background-image: linear-gradient(315deg, #d5adc8 0%, #ff8489 74%);
+
+}
+
+.name{
+  padding: 10px;
+  font-size: 22px;
+  font-weight: bold;
+  background:#1d2224;
+   border-radius: 23px 0 10px 23px;  
+}
+.name p{
+  text-align: left;
+   letter-spacing: 0.7px;
+   text-transform: capitalize;
+  font-family: 'Libre Baskerville', serif;
+    background-color: #d5adc8;
+  background-image: linear-gradient(315deg, #d5adc8 0%, #ff8489 74%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+   left:10px;
+}
+
+.email{
+   text-align: left;
+   padding: 5px;
+   position: relative;
+   bottom: 28px;
+   left:70px;
+}
+.email p{
+  letter-spacing: 1.5px;
+  line-height: 0.5;
+  font-size: 15px;
+  color: #adadad;
+}
+.details{
+  position: relative;
+  bottom: 20px;
+  background-color: #fff;
+  padding: 12px;
+  border-radius: 10px;
+  
+}
+.details p{
+  letter-spacing: 1.5px;
+  line-height: 0.5;
+  font-size: 15px;
+}
+.details p span{
+  font-weight: bold;
+  margin-left: 25px;
+  margin-right: 5px;
+}
+.sex{
+  letter-spacing: 1.5px;
+  line-height: 0.5;
+  font-size: 18px;
+  font-weight: bold;
+
+}
+.option{
+  float:right;
+  position: relative;
+ bottom:50px;
+  right: 8px;
+}
+
+.image{
+  float: left;
+  width: 70px;
+  height: 70px;
+  border-radius: 25px;
+  background-color:#fff;
+  
+  padding: 1em;
+}
+.image span{
+  float: inline-start;
+  color: #000;
+}
+
+.card-form {
+    padding: 20px;
+    margin: 0 auto;
+    width: 50rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    border-radius: 25px;
+    transition: 0.3s;
+    background-color:transparent;
+}
+
+.square_btn{
+  position: relative;
+  bottom: 20px;
+  left: 15px;
+    display: inline-block;
+    float: right;
+    font-weight: bold;
+    width: 50px;
+    padding: 0.25em 0.5em;
+    text-decoration: none;
+    color: white;
+    background-color:  #d5adc8;
+    border: none;
+  outline: none;
+  box-sizing: border-box;
+    border-radius: 15px 0 0 15px;
+    transition: .4s;
+  }
+
+.square_btn:hover {
+    -webkit-transform: rotate(10deg);
+  -ms-transform: rotate(10deg);
+  transform: rotate(10deg);
+  color: #353c3f;
+}
+.ss{
+  position: relative;
+  bottom: 90px;
+  left: 60px;
+  display: flex;
+  flex-direction: column;
+}
+.txtError{
+  color: red; 
+  padding-bottom: 10;
+}
+
+
+/*people-table*/
+.header-class{
+ background-color:  #353c3f;
+ color:white;
+ text-align: center;
+}
+
+.search-class{
+  float:left;
+  width:40rem;
+  border-color:  #666;
+  border-width: 1px;
+}
+
+.csv-class{
+    float: right;
+    margin-right:290px;
+  border-color: #af1c1c;
+}
+.clear-class{
+    float:left;
+}
+.toggle-class{
+  padding: 0 0 10px 0;
+}
+.custom-row-class{
+  text-align: center;
+   background-color: #f2f3f4;
+}
+.btn-toggle-table{
+  border: none;
+  outline: none;
+  font-size: 16px;
+  box-sizing: border-box;
+  padding: 0 15px;
+  cursor: pointer;
+   margin: 0 2px 2px 5px;
+  max-width: 300;
+  text-align: center;
+  text-transform: lowercase;
+  vertical-align: middle;
+  line-height: 38px;
+  font-weight: bold;
+    color:#353c3f;
+   border-radius: 5px;
+   overflow: hidden;
+   background-color: #e5e4e2;
+  background-image: linear-gradient(315deg,#d5adc8,#d5adc8 95%);
+   transition: .3s ease-in-out;
+   box-shadow: rgba(0, 0, 0, 0.3) 1.95px 1.95px 2.6px;
+}
+
+.btn-toggle-table:hover {
+  color:#fff;
+}
+
+.btn-toggle-table:focus{ 
+   border-bottom: 4px solid #353c3f;
+  border-image-slice: 1;
+}
+
+.btn-toggle-table:focus{ 
+   border-bottom: 4px solid #353c3f;
+  border-image-slice: 1;
+}
+
+
+
+/*Datepicker*/
+.react-datepicker {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 0.8rem;
+    background-color:#fff!important;
+    color: #000;
+    border: 0px;
+    border-radius: 20px;
+    display: inline-block;
+    position: relative;
+}
+
+.react-datepicker__header {
+    text-align: center;
+    background-color:#d5adc8!important;
+    padding-top: 8px;
+    position: relative;
+}
+
+.react-datepicker__today-button {
+    background-color: #d5adc8 !important;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    padding: 4px 0;
+    clear: left;
+}
+
+/*AMount */
+.amount{
+ float:left;
+  width: auto;
+  height: 40px;
+  padding: 5px;
+  border: 2px solid #e5e4e2;
+  margin: 5px 5px 30px 0;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  background-color: #e5e4e2;
+  background-image: linear-gradient(to right,#e5e4e2,#e5e4e2 65%,#ffffff 15%,#ffffff 85%);
+  box-shadow: rgba(0, 0, 0, 0.5) 1.95px 1.95px 2.6px;
+
+}
+.t{
+  font-size:15px;
+  text-align: center;
+  float: left;
+  margin:0 15px 5px 5px;
+
+}
+.num{
+  font-size: 18px;
+  text-align: center;
+  float: right;
+   margin:0 5px 5px 5px;
+}
+
+input,
+textarea {
+    background: none;
+    color: #c6c6c6;
+    font-size: 18px;
+    display: block;
+    border: none;
+    border-radius: 10px;
+    border: 1px solid #c6c6c6;
+}
+input:hover{
+  border: 3px solid transparent;
+  border-color: #d5adc8;
+  border-image: linear-gradient(315deg, #d5adc8 0%, #ff8489 74%);
+  border-image-slice: 1;
+}
+input:focus,
+textarea:focus {
+    outline: none;
+    border-radius: 8px;
+}
+
+.input-group-text{
+  position: relative;
+ right: 40px;
+  background-color: transparent;
+  border:none;
+  border-radius: 5px;
+  color: #d5adc8;
+}
+
+/*same line*/
+.search-peo{
+ float: left;
+ position: relative;
+ top: 10px;
+ right:15px;
+}
+.list-left{
+ float: left;
+ width: 100%;
+ padding-top: 20px;
+
+}
+

@@ -1,0 +1,62 @@
+/* Icon */
+
+.icon {
+    font-size: large;
+    color: rgb(253, 253, 253);
+}
+.action{
+    text-align: center;
+}
+.edit {
+    font-size:small;
+    color: #FF8000;
+    
+}
+.delete {
+    font-size: small;
+    color: #FE2E2E;
+    cursor: pointer;
+}
+.round{
+    font-size: small;
+    color:#d5adc8;
+    width: 30px;
+    height: 30px;
+    margin-bottom: 3px;
+    padding-top:7px;
+    text-align: center;
+    background-color:#353c3f;
+    border-radius:20px;
+     border: dashed 1px #353c3f;
+}
+.round:hover{
+ color :#FFF;
+ border: dotted 1px #FFF;
+ 
+}
+
+.home {
+    font-size: 1.5em;
+    color: rgb(253, 253, 253);
+}
+.add {
+    font-size: 20px;
+}
+.add span{
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.male{
+    color: blue;
+    
+}
+.female{
+    color: red;
+}
+
+
+
+
+
+
