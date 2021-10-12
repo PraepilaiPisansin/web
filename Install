@@ -1,0 +1,9 @@
+FRONTEND
+1.open terminal and go to project name is "web"
+1.1 web/npm install
+1.2 web/npm start
+
+BACKEND
+2.open terminal
+2.1 project "web"/backend/npm install
+2.2 web/backend/npm run server
