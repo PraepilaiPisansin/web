@@ -1,24 +1,25 @@
 import React, { Component } from 'react';
 import DatePicker from "react-datepicker";
 import { CountryDropdown, RegionDropdown, CountryRegionData } from 'react-country-region-selector';
-
+import moment from 'moment'
 
 import axios from 'axios';
 
-export default class CreatePeople extends Component {
+export default class CreatePerson extends Component {
     constructor(props) {
         super(props)
         this.state = {
             name: '',
             lsname: '',
             email: '',
-            rollno: '',
             age: '',
             sex: '',
-            birth: new Date,
+            birth: '',
             country: '', 
             region: '',
             jobs:'',
+            pWeight: '',
+            pHeight: '',
             formErrors: {}
         };
         this.initialState = this.state;
@@ -43,24 +44,24 @@ export default class CreatePeople extends Component {
 
 
     validate() {
-        const { name, lsname, email, rollno, age, sex, birth, country, region, jobs} = this.state;
+        const { name, lsname, email, age, sex, birth, country, region, jobs,pWeight,pHeight} = this.state;
         let formErrors = {};
         let formIsValid = true;
      
         if (!name) {
             formIsValid = false;
             formErrors["nameErr"] = "please enter valid first name. ";
-        }else if (!(/^[a-zA-Z]+$/.test(name))) {
+        } else if (!(/^[a-zA-Zก-๙]+$/.test(name))) {
             formIsValid = false;
-            formErrors["nameErr"] = " please only a-z";
+            formErrors["nameErr"] = " please only alphabet not number or symbols";
         }
 
         if (!lsname) {
             formIsValid = false;
             formErrors["lsnameErr"] = " please enter valid last name.";
-        } else if (!(/^[a-zA-Z]+$/.test(lsname))) {
+        } else if (!(/^[a-zA-Zก-๙]+$/.test(lsname))) {
             formIsValid = false;
-            formErrors["lsnameErr"] = " please only a-z";
+            formErrors["lsnameErr"] = " please only alphabet not number or symbols";
         }
 
 
@@ -73,22 +74,7 @@ export default class CreatePeople extends Component {
             formIsValid = false;
             formErrors["emailErr"] = "invalid email id.";
         }
-        if (!rollno) {
-            formIsValid = false;
-            formErrors["rollnoErr"] = "please enter your phone number.";
-        }
-
-        if (!rollno !== "undefined") {
-            //var pattern = new RegExp(/^[0-9\b]+$/);
-            var pattern = new RegExp(/^0[0-9]{8,9}$/);
-            if (!pattern.test(rollno)) {
-                formIsValid = false;
-                formErrors["rollnoErr"] = "please enter only number.";
-            } else if (rollno.length != 10) {
-                formIsValid = false;
-                formErrors["rollnoErr"] = "please enter valid phone number.";
-            }
-        }
+        
         if (!age) {
             formIsValid = false;
             formErrors["ageErr"] = " please enter valid Age.";
@@ -121,6 +107,20 @@ export default class CreatePeople extends Component {
             formIsValid = false;
             formErrors["jobsErr"] = " please only a-z";
         }
+        if (!pWeight) {
+            formIsValid = false;
+            formErrors["pWeightErr"] = " please enter valid pWeight.";
+        } else if (!(/^[0-9]+$/.test(pWeight))) {
+            formIsValid = false;
+            formErrors["pWeightErr"] = " please only 1-9";
+        }
+        if (!pHeight) {
+            formIsValid = false;
+            formErrors["pHeightErr"] = " please enter valid pHeight.";
+        } else if (!(/^[0-9]+$/.test(pHeight))) {
+            formIsValid = false;
+            formErrors["pHeightErr"] = " please only 1-9";
+        }
 
         this.setState({ formErrors: formErrors });
         return formIsValid;
@@ -131,13 +131,14 @@ export default class CreatePeople extends Component {
             name: this.state.name,
             lsname: this.state.lsname,
             email: this.state.email,
-            rollno: this.state.rollno,
             age: this.state.age,
             sex: this.state.sex,
             birth: this.state.birth,
             country:this.state.country,
             region:this.state.region,
-            jobs:this.state.jobs
+            jobs:this.state.jobs,
+            pWeight:this.state.pWeight,
+            pHeight:this.state.pHeight
 
         };
 
@@ -145,8 +146,6 @@ export default class CreatePeople extends Component {
             axios.post('http://localhost:4000/people/create', peopleObject)
                 .then(res => {
                     console.log(this.state);
-
-                    alert('Added Successfully');
                     this.props.history.push('/people-table')
                 }
                 );
@@ -155,20 +154,17 @@ export default class CreatePeople extends Component {
     }
 
 render() {
-    const { nameErr, lsnameErr, emailErr, rollnoErr, ageErr, sexErr, birthErr, countryErr, regionErr,jobsErr } =
+    const { nameErr, lsnameErr, emailErr, ageErr, sexErr, birthErr, countryErr, regionErr, jobsErr, pWeightErr, pHeightErr } =
         this.state.formErrors;
     return (
-        <div class="App-bg">
+       <main class="main">
             <div className="form-wrapper">
-                <br />
-                <br />
-                <br />
                 <form onSubmit={this.onSubmit}>
-                    <card class="card card-form">
-                        <h1>Person Details</h1>
+                    <div class="card-form">
+                        <h1><i class="fas fa-plus-circle mr-4"></i>Add person</h1>
+                        <div class="h1-line" />
                         <br />
-                        
-
+                    
                         <div class="row">
                             {/*first name*/}
                             <div class="col-sm-6 mb-2">
@@ -220,31 +216,12 @@ render() {
                                     }
                                 </div>
 
-                                {/*Contact*/}
-                                <div class="col-sm-3 mb-2">
-                                    <label htmlFor="rollno">Phone</label>
-                                    <input
-                                        type="tel"
-                                        name="rollno"
-                                        //pattern="^0[0-9]{9}"
-                                        className="form-control"
-                                        placeholder="Enter your phone"
-                                        value={this.state.rollno}
-                                        onChange={this.handleChange}
-                                        classname={rollnoErr ? ' showError' : ''}
-                                    />
-                                    {rollnoErr &&
-                                        <div className="txtError">{rollnoErr}</div>
-                                    }
-                                </div>
-
-
-
                                 {/*sex*/}
                                 <div class="col-sm-3 mb-2">
                                     <label htmlFor="sex">Sex</label>
                                     <select name="sex"
-                                        class=" form-control custom-select "
+                                        type="text"
+                                        className="form-control"
                                         value={this.state.sex}
                                         onChange={this.handleChange}
                                         className={sexErr ? ' showError' : ''} >
@@ -255,23 +232,6 @@ render() {
 
                                     {sexErr &&
                                         <div className="txtError">{sexErr}</div>
-                                    }
-                                </div>
-
-                                {/*age*/}
-                                <div class="col-sm-3 mb-2">
-                                    <label htmlFor="age">Age</label>
-                                    <input
-                                        type="number"
-                                        name="age"
-                                        className="form-control"
-                                        placeholder="Age"
-                                        value={this.state.age}
-                                        onChange={this.handleChange}
-                                        classname={ageErr ? ' showError' : ''}
-                                    />
-                                    {ageErr &&
-                                        <div className="txtError">{ageErr}</div>
                                     }
                                 </div>
 
@@ -299,6 +259,58 @@ render() {
                                         <div className="txtError">{birthErr}</div>
                                     }
                                 </div>
+
+                            {/*age*/}
+                            <div class="col-sm-3 mb-2">
+                                <label htmlFor="age">Age</label>
+                                <input
+                                    type="number"
+                                    name="age"
+                                    className="form-control"
+                                    placeholder="Enter Your Age"
+                                    value={this.state.age}
+                                    onChange={this.handleChange}
+                                    classname={ageErr ? ' showError' : ''}
+                                />
+                                {ageErr &&
+                                    <div className="txtError">{ageErr}</div>
+                                }
+                            </div>
+
+                            {/*pWeight*/}
+                            <div class="col-sm-3 mb-2">
+                                <label htmlFor="pWeight">Weight</label>
+                                <input
+                                    type="number"
+                                    name="pWeight"
+                                    className="form-control"
+                                    placeholder="kilograms"
+                                    value={this.state.pWeight}
+                                    onChange={this.handleChange}
+                                    classname={pWeightErr ? ' showError' : ''}
+                                />
+                                {pWeightErr &&
+                                    <div className="txtError">{pWeightErr}</div>
+                                }
+                            </div>
+
+                            {/*pHeight*/}
+                            <div class="col-sm-3 mb-2">
+                                <label htmlFor="pHeight">Height</label>
+                                <input
+                                    type="number"
+                                    name="pHeight"
+                                    className="form-control"
+                                    placeholder="centimetres"
+                                    value={this.state.pHeight}
+                                    onChange={this.handleChange}
+                                    classname={pHeightErr ? ' showError' : ''}
+                                />
+                                {pWeightErr &&
+                                    <div className="txtError">{pHeightErr}</div>
+                                }
+                            </div>
+
                             {/*jobs*/}
                             <div class="col-sm-3 mb-2">
                                 <label htmlFor="jobs">Jobs</label>
@@ -315,11 +327,12 @@ render() {
                                     <div className="txtError">{jobsErr}</div>
                                 }
                             </div>
-
+                            
                             {/*Country */}
                             <div class='col-sm-3 mb-2'>
                                 <label htmlFor="country">Country</label>
                                 <CountryDropdown
+                                    type="text"
                                     name='country'
                                     value={this.state.country}
                                     onChange={this.selectCountry}
@@ -333,6 +346,7 @@ render() {
                             <div class='col-sm-3 mb-2'>
                                 <label htmlFor="region">Region</label>
                                 <RegionDropdown
+                                    type="text"
                                     name='region'
                                     country={this.state.country}
                                     value={this.state.region}
@@ -345,22 +359,18 @@ render() {
                                 }
                             </div>
                             
-                            
-
                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
-                                    <button type="submit" class="btn-filter btn-sm">add</button>
+                                <button type="submit" class="btn-style" onClick={e =>
+                                    window.confirm("Do you want to add this data?") &&
+                                    this.onSubmit(e)
+                                }><i class="fas fa-plus-circle"> add</i></button>
                                 </div>
 
                             </div>
-                        </card>
+                        </div>
                     </form>
-
-
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                </div> </div>
+                </div> 
+                </main>
 
 
         )

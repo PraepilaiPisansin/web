@@ -17,34 +17,10 @@
     color: #FE2E2E;
     cursor: pointer;
 }
-.round{
-    font-size: small;
-    color:#d5adc8;
-    width: 30px;
-    height: 30px;
-    margin-bottom: 3px;
-    padding-top:7px;
-    text-align: center;
-    background-color:#353c3f;
-    border-radius:20px;
-     border: dashed 1px #353c3f;
-}
-.round:hover{
- color :#FFF;
- border: dotted 1px #FFF;
- 
-}
 
 .home {
     font-size: 1.5em;
     color: rgb(253, 253, 253);
-}
-.add {
-    font-size: 20px;
-}
-.add span{
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .male{
@@ -54,8 +30,25 @@
 .female{
     color: red;
 }
+.img-icon{
+    width: 16px;
+    height: 16px;
+}
+.arrow-icon {
+    position: relative;
+    right: 2rem;
+    width: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+     color: #d5adc8;
+}
 
-
+.low{
+ color: #d5adc8;
+}
+.high{
+color: #b876a2 ;
+}
 
 
 

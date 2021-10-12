@@ -13,7 +13,7 @@ import './App.css';
 import './style/Navbar.css';
 import './style/icon.css';
 import './style/index.css';
-
+import './style/chart.css';
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';

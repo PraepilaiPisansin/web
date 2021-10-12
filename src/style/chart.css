@@ -1,0 +1,98 @@
+/*chart.js*/
+.btn-chart{
+  font-weight: bold;
+  background-color: #e5e4e2;
+border-radius: 2px;
+margin-top:20px;
+margin-left: 12rem;
+margin-bottom: -20px;
+}
+
+.btn-chart a{
+  color: #000;
+  float: left;
+  display: block;
+  padding: 4px 6px;
+}
+.btn-chart a:hover{
+  color: #fff;
+  background-image: linear-gradient(315deg, #d5adc8 0%,#b490ca 74%);
+  font-weight: bold;
+border-radius: 2px;
+ 
+
+}
+.chart-active{
+  font-weight: bold;
+  color: #fff !important;
+  background-image: linear-gradient(315deg, #d5adc8 0%,#b490ca 74%);
+border-radius: 2px;
+}
+
+.chart-style{
+  height: 30rem;
+}
+.chart-home{
+  width: 22rem;
+}
+
+.filter-chart{
+    color: #ccc;
+  background-color: transparent;
+  box-shadow: rgba(0, 0, 0, 0.5) 1.95px 1.95px 2.6px;
+   border: none;
+  outline: none;
+  padding: 4px 6px;
+  border-radius: 5px;
+   font-family: 'FontAwesome','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.filter-chart:hover {
+    color: #b876a2;
+   background-color: transparent;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 10px #b876a2;
+border:2px solid #b876a2;
+}
+
+.filter-chart:focus{ 
+  color: #b876a2;
+  background-color:transparent;
+box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 10px #b876a2;
+border:2px solid #b876a2;
+}
+/*home.js*/
+
+
+.l-chart {
+  float: left;
+
+}
+.grid-chart{
+ background: #353c3f;
+  padding: 5px;
+  border-radius: 10px;
+  margin: 20px 15px 0 0;
+  box-shadow: 0 4px 2px -3px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  transition: all .2s ease-in-out;
+}
+
+.lasted{
+  float: left;
+  width:25%;
+
+}
+.lasted h2{
+color:#fff;
+margin: 15px 0 15px 0;
+}
+
+.table-home{
+  width:70%;
+  float: left;
+  /*position: relative;
+  bottom: 20rem;
+  left:20rem;*/
+  margin: 4rem 0 2rem 1rem;
+}
+.table-home thead tr th{
+  background-color:white ;
+}

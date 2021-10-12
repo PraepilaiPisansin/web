@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 
 
-function SearchBox(props) {
+class SearchBox extends Component {
+    render(){
 
     return (
-        <div class="col-6 input-group search-peo">
+        <div class="input-group search-class">
             <input
                 type='text'
-                onChange={props.handleInput}
-                placeholder="Search Name..."
-                className="form-control form-control"
+                onChange={this.props.searchData}
+                placeholder="Enter data to be searched"
+                className="form-control"
                  />
-            <span class="input-group-text"><i class="fas fa-search"></i></span>
-            
+            <span><i class="fas fa-search search-icon"></i></span>
         </div>
     )
-}
+}}
 
 export default SearchBox;

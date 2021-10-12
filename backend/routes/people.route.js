@@ -8,7 +8,6 @@ let peopleSchema = require('../models/People')
 
 
 
-
 //Create people
 router.route('/create').post((req,res,next) =>{
     peopleSchema.create(req.body, (error,data) => {
